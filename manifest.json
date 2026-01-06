@@ -1,0 +1,32 @@
+{
+  "name": "Toledo Course Auto Downloader",
+  "description": "Automatically download all files from Toledo courses for offline access",
+  "version": "1.0",
+  "manifest_version": 3,
+  "permissions": [
+    "activeTab",
+    "downloads",
+    "storage"
+  ],
+  "host_permissions": [
+    "https://ultra.edu.kuleuven.cloud/*"
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "Download Course Files"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://ultra.edu.kuleuven.cloud/ultra/courses/*"],
+      "js": ["content.js"]
+    }
+  ],
+  "icons": {
+    "16": "icon16.png",
+    "48": "icon48.png",
+    "128": "icon128.png"
+  }
+}

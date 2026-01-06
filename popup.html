@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <style>
+    body {
+      width: 350px;
+      padding: 20px;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+      margin: 0;
+    }
+    h1 {
+      font-size: 18px;
+      margin: 0 0 15px 0;
+      color: #333;
+    }
+    .status {
+      padding: 12px;
+      border-radius: 6px;
+      margin-bottom: 15px;
+      font-size: 14px;
+    }
+    .status.info {
+      background-color: #e3f2fd;
+      color: #1976d2;
+      border: 1px solid #90caf9;
+    }
+    .status.success {
+      background-color: #e8f5e9;
+      color: #388e3c;
+      border: 1px solid #81c784;
+    }
+    .status.error {
+      background-color: #ffebee;
+      color: #c62828;
+      border: 1px solid #ef9a9a;
+    }
+    .status.warning {
+      background-color: #fff3e0;
+      color: #f57c00;
+      border: 1px solid #ffb74d;
+    }
+    button {
+      width: 100%;
+      padding: 12px 20px;
+      background-color: #006dc7;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      font-size: 15px;
+      font-weight: 600;
+      cursor: pointer;
+      margin-bottom: 10px;
+      transition: background-color 0.2s;
+    }
+    button:hover {
+      background-color: #005aa3;
+    }
+    button:disabled {
+      background-color: #ccc;
+      cursor: not-allowed;
+    }
+    .progress {
+      margin-top: 10px;
+      display: none;
+    }
+    .progress-bar {
+      width: 100%;
+      height: 8px;
+      background-color: #e0e0e0;
+      border-radius: 4px;
+      overflow: hidden;
+    }
+    .progress-fill {
+      height: 100%;
+      background-color: #006dc7;
+      transition: width 0.3s;
+      width: 0%;
+    }
+    .progress-text {
+      font-size: 12px;
+      color: #666;
+      margin-top: 5px;
+    }
+    .file-list {
+      max-height: 200px;
+      overflow-y: auto;
+      font-size: 12px;
+      margin-top: 10px;
+      display: none;
+      border: 1px solid #e0e0e0;
+      border-radius: 4px;
+      padding: 10px;
+      background-color: #f9f9f9;
+    }
+    .folder-heading {
+      font-weight: bold;
+      color: #006dc7;
+      margin-top: 8px;
+      margin-bottom: 4px;
+    }
+    .folder-heading:first-child {
+      margin-top: 0;
+    }
+    .file-item {
+      padding: 3px 0;
+      color: #333;
+    }
+    /* Indentation for nested folders and files */
+    .indent-0 {
+      padding-left: 0;
+    }
+    .indent-1 {
+      padding-left: 16px;
+    }
+    .indent-2 {
+      padding-left: 32px;
+    }
+    .indent-3 {
+      padding-left: 48px;
+    }
+    .indent-4 {
+      padding-left: 64px;
+    }
+    .indent-5 {
+      padding-left: 80px;
+    }
+    .file-item.downloaded {
+      color: #4caf50;
+    }
+  </style>
+</head>
+<body>
+  <h1>📚 Toledo Course Downloader</h1>
+  
+  <div id="status" class="status info">
+    Ready to download course files
+  </div>
+
+  <button id="downloadBtn">Download All Files</button>
+  <button id="scanBtn" style="background-color: #757575;">Scan Course</button>
+
+  <div class="progress" id="progress">
+    <div class="progress-bar">
+      <div class="progress-fill" id="progressFill"></div>
+    </div>
+    <div class="progress-text" id="progressText">0 / 0 files</div>
+  </div>
+
+  <div class="file-list" id="fileList"></div>
+
+  <script src="popup.js"></script>
+</body>
+</html>
