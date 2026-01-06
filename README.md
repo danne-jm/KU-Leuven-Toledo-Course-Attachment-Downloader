@@ -22,7 +22,7 @@ A Chrome extension that automatically downloads all files from Toledo courses fo
 
 1. Navigate to any Toledo course pag.
 2. Click the extension icon in your browser toolbar
-3. Click "Download All Files" to download all files from the course
+3. Click "Download All Files" to download all files from the course - (Sometimes a download button isn't available. The extension can nonetheless download the document for you.)
 4. Files will be organized in folders matching the course structure
 
 ## How It Works
